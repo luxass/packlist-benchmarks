@@ -14,7 +14,8 @@
     "url": "https://github.com/luxass/packlist-benchmarks.git"
   },
   "scripts": {
-    "bench": "tsx ./scripts/bench.ts",
+    "benchmark": "tsx ./scripts/bench.ts",
+    "update-readme": "tsx ./scripts/update-readme.ts",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit"
   },
