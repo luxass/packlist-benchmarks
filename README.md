@@ -1,3 +1,3 @@
 # packlist-benchmarks
 
-benchmarks for different packlist packages
+benchmarks for different packlist versions
