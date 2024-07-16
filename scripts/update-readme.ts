@@ -1,6 +1,8 @@
 import { exec } from "node:child_process";
-import fs from "node:fs";
-import path from "node:path";
+import { existsSync } from "node:fs";
+import { readFile, writeFile } from "node:fs/promises";
+import { join } from "node:path";
+import process from "node:process";
 
 interface BenchmarkResult {
   name: string;
@@ -14,16 +16,16 @@ interface BenchmarkResults {
   results: BenchmarkResult[];
 }
 
-function updateReadme() {
-  const resultsPath = path.join(__dirname, "..", "benchmark-results.json");
-  const readmePath = path.join(__dirname, "..", "README.md");
+async function run(): Promise<void> {
+  const resultsPath = join(import.meta.dirname, "..", "benchmark-results.json");
+  const readmePath = join(import.meta.dirname, "..", "README.md");
 
-  if (!fs.existsSync(resultsPath)) {
+  if (!existsSync(resultsPath)) {
     console.error("Benchmark results file not found. Run benchmarks first.");
     return;
   }
 
-  const results: BenchmarkResults = JSON.parse(fs.readFileSync(resultsPath, "utf-8"));
+  const results: BenchmarkResults = JSON.parse(await readFile(resultsPath, "utf-8"));
 
   let benchmarkContent = `<!-- bench:start -->
 ## Benchmark Results
@@ -40,10 +42,8 @@ Last updated: ${results.date}
 
   benchmarkContent += "<!-- bench:end -->";
 
-  // Read the current README content
-  const readmeContent = fs.readFileSync(readmePath, "utf-8");
+  const readmeContent = await readFile(readmePath, "utf-8");
 
-  // Replace the content between the tags
   const startTag = "<!-- bench:start -->";
   const endTag = "<!-- bench:end -->";
   const startIndex = readmeContent.indexOf(startTag);
@@ -59,10 +59,10 @@ Last updated: ${results.date}
     + benchmarkContent
     + readmeContent.substring(endIndex);
 
-  fs.writeFileSync(readmePath, newReadmeContent);
+  await writeFile(readmePath, newReadmeContent);
   console.log("README.md has been updated with the latest benchmark results.");
 
-  exec("npx eslint --fix README.md", (error, stdout, stderr) => {
+  exec("npx eslint --fix README.md", (error, _, stderr) => {
     if (error) {
       console.error(`Error running eslint: ${error.message}`);
       return;
@@ -75,4 +75,7 @@ Last updated: ${results.date}
   });
 }
 
-updateReadme();
+run().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});

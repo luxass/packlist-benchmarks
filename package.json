@@ -1,6 +1,7 @@
 {
   "name": "packlist-benchmarks",
   "description": "Packlist benchmarks",
+  "type": "module",
   "private": true,
   "author": {
     "name": "Lucas Nørgård",

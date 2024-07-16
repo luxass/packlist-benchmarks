@@ -7,6 +7,7 @@ on:
       - main
     paths:
       - ./scripts/bench.ts
+      - ./scripts/update-readme.ts
       - ./.github/workflows/benchmark.yaml
       - ./package.json
       - ./pnpm-lock.yaml
@@ -16,6 +17,7 @@ on:
       - synchronize
     paths:
       - ./scripts/bench.ts
+      - ./scripts/update-readme.ts
       - ./.github/workflows/benchmark.yaml
       - ./package.json
       - ./pnpm-lock.yaml
