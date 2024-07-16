@@ -2,6 +2,9 @@
 
 benchmarks for different packlist versions
 
+> [!IMPORTANT]
+> These benchmarks are not meant to be used as a reference for performance in a real-world scenario.
+
 <!-- bench:start -->
 
 ## Benchmark Results
