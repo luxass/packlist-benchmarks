@@ -79,7 +79,7 @@ async function run(): Promise<void> {
       benchmarkContent += "\n**Detailed Results:**\n\n";
 
       group.benchmarks.forEach((benchmark) => {
-        benchmarkContent += `#### ${benchmark.name}\n\n`;
+        benchmarkContent += `<details><summary>${benchmark.name}</summary>\n\n`;
         benchmarkContent += `- **Median:** ${benchmark.median.toFixed(4)}ms\n`;
         benchmarkContent += `- **Min:** ${benchmark.min.toFixed(4)}ms\n`;
         benchmarkContent += `- **Max:** ${benchmark.max.toFixed(4)}ms\n`;
@@ -88,6 +88,7 @@ async function run(): Promise<void> {
         benchmarkContent += `- **99th Percentile:** ${benchmark.p99.toFixed(4)}ms\n`;
         benchmarkContent += `- **99.5th Percentile:** ${benchmark.p995.toFixed(4)}ms\n`;
         benchmarkContent += `- **99.9th Percentile:** ${benchmark.p999.toFixed(4)}ms\n\n`;
+        benchmarkContent += "</details>\n\n";
       });
     });
   });

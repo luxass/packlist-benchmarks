@@ -9,7 +9,7 @@ benchmarks for different packlist versions
 
 ## Benchmark Results
 
-Last updated: 2024-07-16T06:45:28.219Z
+Last updated: 2024-07-16T06:48:14.155Z
 
 ### bench/packlist.bench.ts
 
@@ -22,7 +22,7 @@ Last updated: 2024-07-16T06:45:28.219Z
 
 **Detailed Results:**
 
-#### packlist@5.1.3
+<details><summary>packlist@5.1.3</summary>
 
 - **Median:** 0.8995ms
 - **Min:** 0.8107ms
@@ -33,7 +33,9 @@ Last updated: 2024-07-16T06:45:28.219Z
 - **99.5th Percentile:** 1.4150ms
 - **99.9th Percentile:** 1.7084ms
 
-#### packlist@6.0.1
+</details>
+
+<details><summary>packlist@6.0.1</summary>
 
 - **Median:** 1.7018ms
 - **Min:** 1.5504ms
@@ -44,7 +46,9 @@ Last updated: 2024-07-16T06:45:28.219Z
 - **99.5th Percentile:** 3.7534ms
 - **99.9th Percentile:** 5.0281ms
 
-#### packlist@7.0.4
+</details>
+
+<details><summary>packlist@7.0.4</summary>
 
 - **Median:** 2.0227ms
 - **Min:** 1.8731ms
@@ -55,7 +59,9 @@ Last updated: 2024-07-16T06:45:28.219Z
 - **99.5th Percentile:** 3.6849ms
 - **99.9th Percentile:** 7.8008ms
 
-#### packlist@latest
+</details>
+
+<details><summary>packlist@latest</summary>
 
 - **Median:** 2.6644ms
 - **Min:** 1.8985ms
@@ -65,5 +71,7 @@ Last updated: 2024-07-16T06:45:28.219Z
 - **99th Percentile:** 4.6680ms
 - **99.5th Percentile:** 6.6290ms
 - **99.9th Percentile:** 6.6290ms
+
+</details>
 
 <!-- bench:end -->
