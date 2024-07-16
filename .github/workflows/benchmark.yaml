@@ -5,10 +5,14 @@ on:
   push:
     branches:
       - main
+    paths:
+      - "./scripts/bench.ts"
   pull_request:
     types:
       - opened
       - synchronize
+    paths:
+      - "./scripts/bench.ts"
   schedule:
     - cron: 11 0 * * *
 
