@@ -6,7 +6,7 @@ on:
     branches:
       - main
     paths:
-      - ./scripts/bench.ts
+      - ./bench/*.ts
       - ./scripts/update-readme.ts
       - ./.github/workflows/benchmark.yaml
       - ./package.json
@@ -16,7 +16,7 @@ on:
       - opened
       - synchronize
     paths:
-      - ./scripts/bench.ts
+      - ./bench/*.ts
       - ./scripts/update-readme.ts
       - ./.github/workflows/benchmark.yaml
       - ./package.json
