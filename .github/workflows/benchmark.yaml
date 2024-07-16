@@ -16,6 +16,7 @@ jobs:
   build:
     permissions:
       contents: write
+      pull-requests: write
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4.1.7
@@ -37,11 +38,12 @@ jobs:
       - name: update readme
         run: pnpm update-readme
 
-      - name: Commit and push changes
-        run: |
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "github-actions[bot]"
-          git add ./README.md
-          git add ./benchmark-results.json
-          git commit -m "chore: update benchmarks"
-          git push
+      - name: create pr
+        uses: peter-evans/create-pull-request@v6.1.0
+        with:
+          commit-message: "chore: update benchmarks"
+          title: "chore: update benchmarks"
+          body: |
+            This PR updates the benchmarks.
+          branch: update-benchmarks
+          base: main
