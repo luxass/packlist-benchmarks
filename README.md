@@ -9,13 +9,13 @@ benchmarks for different packlist versions
 
 ## Benchmark Results
 
-Last updated: 2024-07-16T05:45:01.244Z
+Last updated: 2024-07-16T05:59:53.689Z
 
 | Package Version     | Operations/sec | Relative Margin of Error | Samples |
 | ------------------- | -------------- | ------------------------ | ------- |
-| npm-packlist@latest | 524.55         | ±1.47%                   | 86      |
-| npm-packlist@7.0.4  | 498.73         | ±2.44%                   | 82      |
-| npm-packlist@6.0.1  | 618.34         | ±2.52%                   | 83      |
-| npm-packlist@5.1.3  | 1162.21        | ±1.19%                   | 86      |
+| npm-packlist@latest | 522.97         | ±1.29%                   | 86      |
+| npm-packlist@7.0.4  | 497.46         | ±2.18%                   | 83      |
+| npm-packlist@6.0.1  | 615.64         | ±1.46%                   | 87      |
+| npm-packlist@5.1.3  | 1145.57        | ±1.02%                   | 87      |
 
 <!-- bench:end -->
