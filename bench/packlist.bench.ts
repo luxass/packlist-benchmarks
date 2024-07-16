@@ -1,4 +1,4 @@
-import { bench, it } from "vitest";
+import { bench } from "vitest";
 import packlist from "npm-packlist";
 import packlist7 from "npm-packlist7";
 import packlist6 from "npm-packlist6";
