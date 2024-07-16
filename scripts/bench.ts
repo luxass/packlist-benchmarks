@@ -121,7 +121,7 @@ async function runBenchmarks() {
 
       await fs.writeFile(
         path.join(process.cwd(), "benchmark-results.json"),
-        JSON.stringify(results, null, 2),
+        `${JSON.stringify(results, null, 2)}\n`,
       );
 
       // Clean up test directory
