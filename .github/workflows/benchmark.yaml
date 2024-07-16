@@ -18,6 +18,7 @@ on:
 
 jobs:
   build:
+    if: github.repository_owner == 'luxass'
     permissions:
       contents: write
       pull-requests: write
@@ -51,3 +52,5 @@ jobs:
             This PR updates the benchmarks.
           branch: update-benchmarks
           base: main
+          reviewers: "luxass"
+
