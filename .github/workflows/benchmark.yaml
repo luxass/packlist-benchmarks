@@ -11,7 +11,7 @@ on:
       - ./.github/workflows/benchmark.yaml
       - ./package.json
       - ./pnpm-lock.yaml
-  pull_request:
+  pull_request_target:
     types:
       - opened
       - synchronize
