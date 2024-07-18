@@ -55,7 +55,7 @@ jobs:
         id: readme
         run: |
           BENCH_RESULTS=$(cat README.md | sed -n '/<!-- bench:start -->/,/<!-- bench:end -->/{/<!-- bench:start -->/d; /<!-- bench:end -->/d; p;}')
-          echo "BENCH_RESULTS=$BENCH_RESULTS" >> $GITHUB_OUTPUT
+          echo "BENCH_RESULTS='$BENCH_RESULTS'" >> $GITHUB_OUTPUT
 
       - name: create pr
         uses: peter-evans/create-pull-request@v6.1.0
