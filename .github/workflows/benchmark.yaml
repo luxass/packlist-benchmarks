@@ -51,6 +51,12 @@ jobs:
       - name: update readme
         run: pnpm update-readme
 
+      - name: readme contents
+        id: readme
+        run: |
+          BENCH_RESULTS=$(cat README.md | sed -n '/<!-- bench:start -->/,/<!-- bench:end -->/{/<!-- bench:start -->/d; /<!-- bench:end -->/d; p;}')
+          echo "BENCH_RESULTS=$BENCH_RESULTS" >> $GITHUB_OUTPUT
+
       - name: create pr
         uses: peter-evans/create-pull-request@v6.1.0
         with:
@@ -58,6 +64,9 @@ jobs:
           title: "chore: update benchmarks"
           body: |
             This PR updates the benchmarks.
+
+            ## Overview
+            ${{ steps.readme.outputs.BENCH_RESULTS }}
           branch: update-benchmarks
           base: main
           committer: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
