@@ -54,8 +54,11 @@ jobs:
       - name: readme contents
         id: readme
         run: |
-          BENCH_RESULTS=$(cat README.md | sed -n '/<!-- bench:start -->/,/<!-- bench:end -->/{/<!-- bench:start -->/d; /<!-- bench:end -->/d; p;}')
-          echo "BENCH_RESULTS='$BENCH_RESULTS'" >> $GITHUB_OUTPUT
+          BENCH_RESULTS=$(sed -n '/<!-- bench:start -->/,/<!-- bench:end -->/{/<!-- bench:start -->/d; /<!-- bench:end -->/d; p;}' README.md)
+          EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
+          echo "BENCH_RESULTS<<$EOF" >> $GITHUB_OUTPUT
+          echo "$BENCH_RESULTS" >> $GITHUB_OUTPUT
+          echo "$EOF" >> $GITHUB_OUTPUT
 
       - name: create pr
         uses: peter-evans/create-pull-request@v6.1.0
