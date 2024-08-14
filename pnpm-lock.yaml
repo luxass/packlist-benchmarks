@@ -34,8 +34,8 @@ importers:
         specifier: ^7.0.3
         version: 7.0.3
       '@types/npm-packlist5':
-        specifier: npm:@types/npm-packlist@3.0.0
-        version: '@types/npm-packlist@3.0.0'
+        specifier: npm:@types/npm-packlist@7.0.3
+        version: '@types/npm-packlist@7.0.3'
       '@types/npm-packlist6':
         specifier: npm:@types/npm-packlist@3.0.0
         version: '@types/npm-packlist@3.0.0'
