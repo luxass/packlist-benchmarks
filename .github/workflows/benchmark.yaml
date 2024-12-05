@@ -61,7 +61,7 @@ jobs:
           echo "$EOF" >> $GITHUB_OUTPUT
 
       - name: create pr
-        uses: peter-evans/create-pull-request@v6.1.0
+        uses: peter-evans/create-pull-request@v7.0.5
         with:
           commit-message: "chore: update benchmarks"
           title: "chore: update benchmarks"
