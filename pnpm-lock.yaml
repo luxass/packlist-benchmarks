@@ -21,8 +21,8 @@ importers:
         specifier: npm:npm-packlist@6.0.1
         version: npm-packlist@6.0.1
       npm-packlist7:
-        specifier: npm:npm-packlist@7.0.4
-        version: npm-packlist@7.0.4
+        specifier: npm:npm-packlist@10.0.0
+        version: npm-packlist@10.0.0
     devDependencies:
       '@luxass/eslint-config':
         specifier: ^4.12.1
@@ -1672,6 +1672,10 @@ packages:
     resolution: {integrity: sha512-VuuG0wCnjhnylG1ABXT3dAuIpTNDs/G8jlpmwXY03fXoXy/8ZK8/T+hMzt8L4WnrLCJgdybqgPagnF/f97cg3A==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
 
+  ignore-walk@7.0.0:
+    resolution: {integrity: sha512-T4gbf83A4NH95zvhVYZc+qWocBBGlpzUXLPGurJggw/WIOwicfXJChLDP/iBZnN5WqROSu5Bm3hhle4z8a8YGQ==}
+    engines: {node: ^18.17.0 || >=20.5.0}
+
   ignore@5.3.2:
     resolution: {integrity: sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g==}
     engines: {node: '>= 4'}
@@ -2141,6 +2145,10 @@ packages:
   npm-package-arg@11.0.2:
     resolution: {integrity: sha512-IGN0IAwmhDJwy13Wc8k+4PEbTPhpJnMtfR53ZbOyjkvmEcLS4nCwp6mvMWjS5sUjeiW3mpx6cHmuhKEu9XmcQw==}
     engines: {node: ^16.14.0 || >=18.0.0}
+
+  npm-packlist@10.0.0:
+    resolution: {integrity: sha512-rht9U6nS8WOBDc53eipZNPo5qkAV4X2rhKE2Oj1DYUQ3DieXfj0mKkVmjnf3iuNdtMd8WfLdi2L6ASkD/8a+Kg==}
+    engines: {node: ^20.17.0 || >=22.9.0}
 
   npm-packlist@5.1.3:
     resolution: {integrity: sha512-263/0NGrn32YFYi4J533qzrQ/krmmrWwhKkzwTuM4f/07ug51odoaNjUexxO4vxlzURHcmYMH1QjvHjsNDKLVg==}
@@ -4670,6 +4678,10 @@ snapshots:
     dependencies:
       minimatch: 9.0.5
 
+  ignore-walk@7.0.0:
+    dependencies:
+      minimatch: 9.0.5
+
   ignore@5.3.2: {}
 
   import-fresh@3.3.0:
@@ -5351,6 +5363,10 @@ snapshots:
       proc-log: 4.2.0
       semver: 7.6.3
       validate-npm-package-name: 5.0.1
+
+  npm-packlist@10.0.0:
+    dependencies:
+      ignore-walk: 7.0.0
 
   npm-packlist@5.1.3:
     dependencies:
