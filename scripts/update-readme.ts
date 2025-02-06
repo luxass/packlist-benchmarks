@@ -109,8 +109,8 @@ async function run(): Promise<void> {
 
   const newReadmeContent
     = readmeContent.substring(0, startIndex)
-    + benchmarkContent
-    + readmeContent.substring(endIndex);
+      + benchmarkContent
+      + readmeContent.substring(endIndex);
 
   await writeFile(readmePath, newReadmeContent);
   console.log("README.md has been updated with the latest benchmark results.");

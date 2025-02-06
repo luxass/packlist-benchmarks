@@ -15,7 +15,7 @@
     "url": "https://github.com/luxass/packlist-benchmarks.git"
   },
   "scripts": {
-    "benchmark": "pnpm vitest bench --run",
+    "benchmark": "pnpm vitest bench --run && tsx ./scripts/fix-benchmarks.ts",
     "update-readme": "tsx ./scripts/update-readme.ts",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit"

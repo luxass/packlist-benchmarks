@@ -6,7 +6,7 @@ export default defineConfig({
       "./bench/__setup.ts",
     ],
     benchmark: {
-      outputJson: "./benchmark-results.json",
+      outputJson: "./all-benchmark-results.json",
     },
   },
 });

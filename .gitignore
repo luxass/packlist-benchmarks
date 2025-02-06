@@ -1,3 +1,4 @@
 dist
 node_modules
 .bench-directory
+all-benchmark-results.json
