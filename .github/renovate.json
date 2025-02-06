@@ -5,18 +5,9 @@
   ],
   "packageRules": [
     {
-      "matchPackageNames": [
-        "@types/npm-packlist",
-        "@types/npm-packlist5",
-        "@types/npm-packlist6",
-        "@types/npm-packlist7",
-        "@types/npm-packlist8",
-        "@types/npm-packlist9",
-        "npm-packlist5",
-        "npm-packlist6",
-        "npm-packlist7",
-        "npm-packlist8",
-        "npm-packlist9"
+      "matchPackagePatterns": [
+        "^@types/npm-packlist",
+        "^npm-packlist"
       ],
       "enabled": false
     }
