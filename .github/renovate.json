@@ -2,5 +2,14 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "github>luxass/renovate-config"
+  ],
+  "packageRules": [
+    {
+      "matchPackagePatterns": [
+        "^@types/npm-packlist[5-9]$",
+        "^npm-packlist[5-9]$"
+      ],
+      "enabled": false
+    }
   ]
 }
