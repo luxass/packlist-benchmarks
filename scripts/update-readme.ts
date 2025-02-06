@@ -29,20 +29,6 @@ interface Benchmark {
   p999: number;
 }
 
-interface Group {
-  fullName: string;
-  benchmarks: Benchmark[];
-}
-
-interface File {
-  filepath: string;
-  groups: Group[];
-}
-
-interface BenchmarkResults {
-  files: File[];
-}
-
 function formatNumber(num: number): string {
   return num.toLocaleString("en-US", { maximumFractionDigits: 2 });
 }
@@ -56,7 +42,7 @@ async function run(): Promise<void> {
     return;
   }
 
-  const results: BenchmarkResults = JSON.parse(await readFile(resultsPath, "utf-8"));
+  const benchmarks: Benchmark[] = JSON.parse(await readFile(resultsPath, "utf-8"));
 
   let benchmarkContent = `<!-- bench:start -->
   ## Benchmark Results
@@ -65,32 +51,28 @@ async function run(): Promise<void> {
 
   `;
 
-  results.files.forEach((file) => {
-    file.groups.forEach((group) => {
-      benchmarkContent += `### ${group.fullName}\n\n`;
-      benchmarkContent += `| Package Version | Ops/sec | Runs sampled | Margin of error | Avg. run time |
-  |-----------------|---------|---------------|-----------------|---------------|
+  benchmarkContent += `### Packlist \n\n`;
+  benchmarkContent += `| Package Version | Ops/sec | Runs sampled | Margin of error | Avg. run time |
+  |-----------------|---------|---------------|-----------------|--------------|
   `;
 
-      group.benchmarks.sort((a, b) => a.rank - b.rank).forEach((benchmark) => {
-        benchmarkContent += `| ${benchmark.name} | ${formatNumber(benchmark.hz)} | ${benchmark.sampleCount} | ±${benchmark.rme.toFixed(2)}% | ${benchmark.mean.toFixed(4)}ms |\n`;
-      });
+  benchmarks.sort((a, b) => a.rank - b.rank).forEach((benchmark) => {
+    benchmarkContent += `| ${benchmark.name} | ${formatNumber(benchmark.hz)} | ${benchmark.sampleCount} | ±${benchmark.rme.toFixed(2)}% | ${benchmark.mean.toFixed(4)}ms |\n`;
+  });
 
-      benchmarkContent += "\n**Detailed Results:**\n\n";
+  benchmarkContent += "\n**Detailed Results:**\n\n";
 
-      group.benchmarks.forEach((benchmark) => {
-        benchmarkContent += `<details><summary>${benchmark.name}</summary>\n\n`;
-        benchmarkContent += `- **Median:** ${benchmark.median.toFixed(4)}ms\n`;
-        benchmarkContent += `- **Min:** ${benchmark.min.toFixed(4)}ms\n`;
-        benchmarkContent += `- **Max:** ${benchmark.max.toFixed(4)}ms\n`;
-        benchmarkContent += `- **Standard Deviation:** ${benchmark.sd.toFixed(4)}ms\n`;
-        benchmarkContent += `- **75th Percentile:** ${benchmark.p75.toFixed(4)}ms\n`;
-        benchmarkContent += `- **99th Percentile:** ${benchmark.p99.toFixed(4)}ms\n`;
-        benchmarkContent += `- **99.5th Percentile:** ${benchmark.p995.toFixed(4)}ms\n`;
-        benchmarkContent += `- **99.9th Percentile:** ${benchmark.p999.toFixed(4)}ms\n\n`;
-        benchmarkContent += "</details>\n\n";
-      });
-    });
+  benchmarks.forEach((benchmark) => {
+    benchmarkContent += `<details><summary>${benchmark.name}</summary>\n\n`;
+    benchmarkContent += `- **Median:** ${benchmark.median.toFixed(4)}ms\n`;
+    benchmarkContent += `- **Min:** ${benchmark.min.toFixed(4)}ms\n`;
+    benchmarkContent += `- **Max:** ${benchmark.max.toFixed(4)}ms\n`;
+    benchmarkContent += `- **Standard Deviation:** ${benchmark.sd.toFixed(4)}ms\n`;
+    benchmarkContent += `- **75th Percentile:** ${benchmark.p75.toFixed(4)}ms\n`;
+    benchmarkContent += `- **99th Percentile:** ${benchmark.p99.toFixed(4)}ms\n`;
+    benchmarkContent += `- **99.5th Percentile:** ${benchmark.p995.toFixed(4)}ms\n`;
+    benchmarkContent += `- **99.9th Percentile:** ${benchmark.p999.toFixed(4)}ms\n\n`;
+    benchmarkContent += "</details>\n\n";
   });
 
   benchmarkContent += "<!-- bench:end -->";
