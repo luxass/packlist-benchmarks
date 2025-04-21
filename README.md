@@ -9,96 +9,96 @@ benchmarks for different packlist versions
 
 ## Benchmark Results
 
-Last updated: 2025-02-17T00:03:42.208Z
+Last updated: 2025-04-21T00:04:17.302Z
 
 ### Packlist
 
 | Package Version | Ops/sec  | Runs sampled | Margin of error | Avg. run time |
 | --------------- | -------- | ------------ | --------------- | ------------- |
-| packlist@5.1.3  | 1,007.59 | 504          | ±0.94%          | 0.9925ms      |
-| packlist@6.0.1  | 516.34   | 259          | ±1.77%          | 1.9367ms      |
-| packlist@9.0.1  | 467.6    | 234          | ±1.38%          | 2.1386ms      |
-| packlist@8.0.2  | 459.99   | 230          | ±1.51%          | 2.1740ms      |
-| packlist@7.0.4  | 458.67   | 230          | ±1.56%          | 2.1802ms      |
-| packlist@latest | 407.41   | 204          | ±2.74%          | 2.4545ms      |
+| packlist@5.1.3  | 1,046.18 | 524          | ±0.79%          | 0.9559ms      |
+| packlist@6.0.1  | 543.55   | 272          | ±1.30%          | 1.8398ms      |
+| packlist@9.0.1  | 482.19   | 242          | ±1.19%          | 2.0739ms      |
+| packlist@7.0.4  | 476.1    | 239          | ±1.27%          | 2.1004ms      |
+| packlist@8.0.2  | 470.91   | 236          | ±1.59%          | 2.1235ms      |
+| packlist@latest | 363.18   | 182          | ±3.47%          | 2.7535ms      |
 
 **Detailed Results:**
 
 <details><summary>packlist@5.1.3</summary>
 
-- **Median:** 0.9631ms
-- **Min:** 0.8680ms
-- **Max:** 1.4560ms
-- **Standard Deviation:** 0.1070ms
-- **75th Percentile:** 0.9962ms
-- **99th Percentile:** 1.3790ms
-- **99.5th Percentile:** 1.4215ms
-- **99.9th Percentile:** 1.4560ms
+- **Median:** 0.9371ms
+- **Min:** 0.8591ms
+- **Max:** 2.1164ms
+- **Standard Deviation:** 0.0887ms
+- **75th Percentile:** 0.9651ms
+- **99th Percentile:** 1.2720ms
+- **99.5th Percentile:** 1.3499ms
+- **99.9th Percentile:** 2.1164ms
 
 </details>
 
 <details><summary>packlist@6.0.1</summary>
 
-- **Median:** 1.8284ms
-- **Min:** 1.7050ms
-- **Max:** 3.9905ms
-- **Standard Deviation:** 0.2819ms
-- **75th Percentile:** 1.9245ms
-- **99th Percentile:** 2.9722ms
-- **99.5th Percentile:** 3.4299ms
-- **99.9th Percentile:** 3.9905ms
+- **Median:** 1.7683ms
+- **Min:** 1.6334ms
+- **Max:** 2.7403ms
+- **Standard Deviation:** 0.2015ms
+- **75th Percentile:** 1.8263ms
+- **99th Percentile:** 2.7153ms
+- **99.5th Percentile:** 2.7236ms
+- **99.9th Percentile:** 2.7403ms
 
 </details>
 
 <details><summary>packlist@9.0.1</summary>
 
-- **Median:** 2.0591ms
-- **Min:** 1.9483ms
-- **Max:** 3.2780ms
-- **Standard Deviation:** 0.2303ms
-- **75th Percentile:** 2.1180ms
-- **99th Percentile:** 3.0350ms
-- **99.5th Percentile:** 3.1831ms
-- **99.9th Percentile:** 3.2780ms
-
-</details>
-
-<details><summary>packlist@8.0.2</summary>
-
-- **Median:** 2.0841ms
-- **Min:** 1.9377ms
-- **Max:** 3.5852ms
-- **Standard Deviation:** 0.2532ms
-- **75th Percentile:** 2.1895ms
-- **99th Percentile:** 3.2164ms
-- **99.5th Percentile:** 3.4374ms
-- **99.9th Percentile:** 3.5852ms
+- **Median:** 2.0125ms
+- **Min:** 1.8740ms
+- **Max:** 2.8638ms
+- **Standard Deviation:** 0.1955ms
+- **75th Percentile:** 2.0663ms
+- **99th Percentile:** 2.8340ms
+- **99.5th Percentile:** 2.8376ms
+- **99.9th Percentile:** 2.8638ms
 
 </details>
 
 <details><summary>packlist@7.0.4</summary>
 
-- **Median:** 2.0919ms
-- **Min:** 1.9577ms
-- **Max:** 4.0993ms
-- **Standard Deviation:** 0.2632ms
-- **75th Percentile:** 2.1806ms
-- **99th Percentile:** 3.2232ms
-- **99.5th Percentile:** 3.3249ms
-- **99.9th Percentile:** 4.0993ms
+- **Median:** 2.0272ms
+- **Min:** 1.9168ms
+- **Max:** 3.0081ms
+- **Standard Deviation:** 0.2108ms
+- **75th Percentile:** 2.1049ms
+- **99th Percentile:** 2.9964ms
+- **99.5th Percentile:** 3.0035ms
+- **99.9th Percentile:** 3.0081ms
+
+</details>
+
+<details><summary>packlist@8.0.2</summary>
+
+- **Median:** 2.0167ms
+- **Min:** 1.8779ms
+- **Max:** 3.5721ms
+- **Standard Deviation:** 0.2646ms
+- **75th Percentile:** 2.1169ms
+- **99th Percentile:** 3.0755ms
+- **99.5th Percentile:** 3.2217ms
+- **99.9th Percentile:** 3.5721ms
 
 </details>
 
 <details><summary>packlist@latest</summary>
 
-- **Median:** 2.2910ms
-- **Min:** 2.0050ms
-- **Max:** 4.6639ms
-- **Standard Deviation:** 0.4907ms
-- **75th Percentile:** 2.5670ms
-- **99th Percentile:** 4.3287ms
-- **99.5th Percentile:** 4.3818ms
-- **99.9th Percentile:** 4.6639ms
+- **Median:** 2.6649ms
+- **Min:** 2.0015ms
+- **Max:** 5.2554ms
+- **Standard Deviation:** 0.6571ms
+- **75th Percentile:** 2.9708ms
+- **99th Percentile:** 5.2505ms
+- **99.5th Percentile:** 5.2554ms
+- **99.9th Percentile:** 5.2554ms
 
 </details>
 
