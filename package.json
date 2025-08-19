@@ -30,7 +30,7 @@
     "npm-packlist9": "npm:npm-packlist@9.0.0"
   },
   "devDependencies": {
-    "@luxass/eslint-config": "^4.15.0",
+    "@luxass/eslint-config": "^5.0.0",
     "@types/node": "^22.0.0",
     "@types/npm-packlist": "^7.0.3",
     "@types/npm-packlist5": "npm:@types/npm-packlist@3.0.0",
