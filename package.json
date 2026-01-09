@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "@luxass/eslint-config": "4.18.1",
-    "@types/node": "22.15.21",
+    "@types/node": "24.10.4",
     "@types/npm-packlist": "^7.0.3",
     "@types/npm-packlist5": "npm:@types/npm-packlist@3.0.0",
     "@types/npm-packlist6": "npm:@types/npm-packlist@3.0.0",
